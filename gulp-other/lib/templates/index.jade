@@ -1,0 +1,31 @@
+extends layout
+block content_main
+    include ./includes/nav
+    .main
+        .container
+            .row
+                div(class='col-sm-9 main-inner')
+                    //- include includes/search
+                    #main-inset
+                        //- include ListMain
+                    a#list-more(href="#" target="_blank" class="btn bg-success" role="button") 加载更多&gt;&gt;
+                    //右侧信息
+                div(class='col-sm-3 s-sidebar')
+                    #DynaInfo
+                        h3
+                        a(href="#" target="_blank") 18亿专项圆梦基金助力开发者掘金
+                        form#TForm(action="" method="POST")
+                            input(type="hidden" name="user_code" value="")
+                            input(type="hidden" name="user" value="142267")
+                            #DivPubStatus(style='display:none') 已发布:)
+                            textarea#msg(name="msg" placeholder="今天你动弹了吗？")
+                            button#btn-push(type="submit") 动弹
+                        //消息列表
+                        //- include ListTweet
+                    //banner
+                    #ad-01
+                    //热门推荐
+                    //- include ListHot
+                    //标签云
+                    #tags
+        include ./includes/footer

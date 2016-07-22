@@ -28,24 +28,24 @@ gulp.task('puer',function(){
         baseDir:'./'
         }
     });
-    gulp.watch('./sass/**/*.scss',['sass']);
+    gulp.watch('sass/**/*.scss',['sass']);
     gulp.watch("*.html").on('change',reload);
 });
 
 gulp.task('sass',function(){
-    return gulp.src('./sass/**/*.scss')
-    .pipe(sass()).pipe(gulp.dest( './dist/css' ) );
+    return gulp.src('sass/**/*.scss')
+    .pipe(sass()).pipe(gulp.dest( 'dist/css' ) );
 });
 
 /*css合并压缩*/
 gulp.task('styles', function(){
 	return gulp.src([
-		"./src/css/dj_home.css",
-		"./src/css/dj_activity.css",
+		"src/css/dj_home.css",
+		"src/css/dj_activity.css",
 		])
 	.pipe(concat('styles.css'))
 	.pipe(mincss())
-	.pipe(gulp.dest('./dist/css/'))
+	.pipe(gulp.dest('dist/css/'))
 });
 
 // var imagemin = require('imagemin'); 
@@ -62,3 +62,19 @@ gulp.task('styles', function(){
 //         }))) 
 //         .pipe(gulp.dest('dist/images'))
 // });
+
+/*jade 编译*/
+/*需要优化 使用正则排除公用单个模块编译[layout.jade,nav.jade,footer.jade,]*/
+var jade = require('gulp-jade');
+// var wrap = require('gulp-wrap-amd'); //AMD 规范
+gulp.task('jade', function() {
+  gulp.src('lib/templates/*.jade')
+    .pipe(jade({
+      pretty:true     //编译过后不压缩
+    }))
+    .pipe(gulp.dest('dist/templates'))
+});
+
+gulp.task('watch-jade', function() {
+    gulp.watch('lib/templates/*.jade', ['jade']);
+});

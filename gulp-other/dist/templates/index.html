@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <mate charset="utf-8"></mate>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="description" content="技术分享,web前端,2345cn,php,生活,教育,汽车,娱乐">
+    <title></title>
+  </head>
+  <body>
+    <div id="nav" class="nav navbar-default navbar-fixed-top">
+      <div class="nav-container container">
+        <h1><a href="www.2345cn.com">2345cn</a></h1>
+        <nav class="nav-top"><a href="/" class="nav-top__item">首页</a><a href="/" class="nav-top__item">技术</a><a href="/" class="nav-top__item">生活</a><a href="/" class="nav-top__item">问答</a>
+        </nav><a href="#" role="button" class="btn btn-success btn-ask">发布话题</a>
+      </div><a id="nav_login" href="/login" class="glyphicon glyphicon-off"></a>
+    </div>
+    <div class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 main-inner">
+            <div id="main-inset">
+            </div><a id="list-more" href="#" target="_blank" role="button" class="btn bg-success">加载更多&gt;&gt;</a>
+            <!--右侧信息-->
+          </div>
+          <div class="col-sm-3 s-sidebar">
+            <div id="DynaInfo">
+              <h3></h3><a href="#" target="_blank">18亿专项圆梦基金助力开发者掘金</a>
+              <form id="TForm" action="" method="POST">
+                <input type="hidden" name="user_code" value="">
+                <input type="hidden" name="user" value="142267">
+                <div id="DivPubStatus" style="display:none">已发布:)</div>
+                <textarea id="msg" name="msg" placeholder="今天你动弹了吗？"></textarea>
+                <button id="btn-push" type="submit">动弹</button>
+              </form>
+              <!--消息列表-->
+            </div>
+            <!--banner-->
+            <div id="ad-01"></div>
+            <!--热门推荐-->
+            <!--标签云-->
+            <div id="tags"></div>
+          </div>
+        </div>
+      </div>
+      <footer id="footer" class="footer">
+        <div class="footer-container container">
+          <p><a href="#">欢迎加入QQ群交流提问</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

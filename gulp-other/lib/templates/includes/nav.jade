@@ -1,0 +1,12 @@
+#nav.nav.navbar-default.navbar-fixed-top
+    div.nav-container.container
+        h1
+            a(href='www.2345cn.com') 2345cn
+        nav.nav-top
+            - var navHref = ['/','/technology','live','ask']
+            mixin navList(value, cont)
+                each val in cont
+                    a.nav-top__item(href='/') #{val}
+            +navList(navHref,['首页', '技术', '生活', '问答'])
+        a(href="#" class="btn btn-success btn-ask" role="button") 发布话题
+    a#nav_login.glyphicon.glyphicon-off(href='/login')
