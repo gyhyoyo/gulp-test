@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AA8LA,qCAAqC;AAarC;;EAEE;AC3MF,IAAI;EACH,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAC,eAAe;EACtB,KAAK,EAAE,IAAI",
+"sources": ["../sass/includes/g_functions.scss","../sass/index.scss"],
+"names": [],
+"file": "index.css"
+}

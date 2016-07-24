@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*-----CDN地址[引入图片直接加图片相对地址即可]------*/
+/*for example
+background: domain-url("/img/me-user-icon.png") no-repeat center;
+*/
+body {
+  background-color: #f30;
+  border: 2px solid green;
+  color: #000; }
+
+/*# sourceMappingURL=index.css.map */

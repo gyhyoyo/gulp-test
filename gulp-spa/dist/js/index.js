@@ -1,0 +1,1 @@
+var index1=0;console.log("abcddd");

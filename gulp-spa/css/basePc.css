@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*-----CDN地址[引入图片直接加图片相对地址即可]------*/
+/*for example
+background: domain-url("/img/me-user-icon.png") no-repeat center;
+*/
+/*PC css Reset start*/
+body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 12px/1.5 Arial,"Microsoft Yahei",tahoma,arial,"\5b8b\4f53",sans-serif; }
+
+input, button, select, textarea {
+  outline: none; }
+
+textarea {
+  resize: none; }
+
+a, a:hover, body {
+  color: #333; }
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.fl, .fr {
+  display: inline; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+i, em {
+  display: inline-block;
+  font-style: normal; }
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: ""; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1;
+  /*IE/7/6*/ }
+
+/*css Reset end!*/
+
+/*# sourceMappingURL=basePc.css.map */
