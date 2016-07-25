@@ -1,8 +1,6 @@
 
 .DS_Store
 .idea
-.git
-../.idea
 lib-cov
 *.seed
 *.log
@@ -17,6 +15,7 @@ lib-cov
 pids
 logs
 results
+
 
 npm-debug.log
 node_modules
