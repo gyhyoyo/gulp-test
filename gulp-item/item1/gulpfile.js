@@ -25,7 +25,7 @@ gulp.task('default', ['sass','js-concat','images','jade'], function() {
         }
     });
     gulp.watch(['templates/**'],['jade']);
-    gulp.watch(['sass/**','dist/css/**'],['sass']);
+    gulp.watch(['sass/**'],['sass']);
     gulp.watch(['js/**'],['js-concat']);
     gulp.watch(['images/**','dist/images/**'],['images']);
     gulp.watch("dist/templates/*.html").on('change',reload);

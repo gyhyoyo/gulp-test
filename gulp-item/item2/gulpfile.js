@@ -25,9 +25,9 @@ gulp.task('default', ['sass','js-concat','images','jade'], function() {
         }
     });
     gulp.watch(['templates/**'],['jade']);
-    gulp.watch(['sass/**','dist/css/**'],['sass']);
+    gulp.watch(['sass/**'],['sass']);
     gulp.watch(['js/**'],['js-concat']);
-    gulp.watch(['images/**','dist/images/**'],['images']);
+    gulp.watch(['images/**'],['images']);
     gulp.watch("dist/templates/*.html").on('change',reload);
 });
 /*-------------------jade 编译--------------*/
@@ -63,8 +63,7 @@ gulp.task('sass',function(){
             browsers: ['last 2 versions', 'Android >= 4.0','Firefox >= 20','last 2 Explorer versions'],
             cascade: false, //美化属性值
             remove: true     //去掉不必要的前缀
-        }))                      
-    
+        }))                       
     .pipe(gulp.dest(cssDest))                                  // 输出文件本地
     .pipe(borwserSync.stream());
 });
