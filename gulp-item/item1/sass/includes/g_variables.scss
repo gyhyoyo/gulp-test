@@ -1,0 +1,42 @@
+﻿@charset "UTF-8";
+// CDN 资源主机地址 切换本地和线上地址即可
+$host: '//s.xx.com';
+//* 往往用于开发环境(即自己的机器) */
+$local_env: '';
+//资源的基本路径 */
+$base_path: $local_env;
+//$base_path: $host;
+//----全局变量[颜色和边框]----
+// 背景颜色
+$global-color:#333;
+
+$background-color: #f2f2f2;
+
+$color-red: #FF3D00;
+
+$color-blue: #2979FF;
+
+$color-green: #34A853;
+
+$color-orange: #FBBC05;
+
+
+//----------弹出框样式--------
+//.message{
+//  border:1px solid #ccc;
+//  padding:10px;
+//  color:#333;
+//  @include box-shadow-black(0,5px,5px,.3);
+//}
+//.sucess{
+//  @extend .message;
+//  border:1px solid green;
+//}
+//.error{
+//  @extend .message;
+//  border:1px solid red;
+//}
+//.warning{
+//  @extend .message;
+//  border:1px solid yellow;
+//}

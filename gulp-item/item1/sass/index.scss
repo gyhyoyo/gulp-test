@@ -1,0 +1,17 @@
+@charset "UTF-8";
+//@import "basePc";
+@import "includes/g_functions";
+//@include cssRestPC();
+@import "includes/nav";
+/*main*/
+body{
+	background-color: #fff;
+	background-size:cotain;
+
+}
+span{
+	display:flex;
+	box-shadow:1px 1px 5px rgba(0,0,0,.5);
+	border-radius:50%;
+	transition :transform 1s;
+}
