@@ -18,7 +18,9 @@
  安装cnpm使用淘宝镜像: npm install cnpm -g --registry=https://registry.npm.taobao.org 
  备注: 运行cnpm i 安装依赖后,执行gulp即可。
   如果有其他依赖问题,删除package.json 文件之前复制devDependencies里需要安装的插件后。然后重新cnpm init,最后把刚才复制的插件包重新粘贴devDependencies里面。
-  
-* 1.执行gulp完成自动编译 监视文件。 2.后续增加版本号运行gulp revs 生成版本号[js,css,images]
+     ** item2 为item2 的优化版本
+     ** item3 [为不使用jade模板 js/sass/img 实现了压缩合并，实时监测文件变化]
+* 1.执行gulp完成自动编译 监视文件。
+* 2.后续增加版本号运行gulp revs 生成版本号[js,css,images]
 
 ->gulp-webpack 

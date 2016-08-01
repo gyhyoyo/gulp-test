@@ -1,7 +1,7 @@
 {
   "name": "item1",
   "version": "1.0.0",
-  "description": "mincss,minjs,minimg",
+  "description": "静态资源压缩合并打包",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -35,7 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "min"
+    "自动化构建工具,gulp"
   ],
   "author": "yoyo",
   "license": "ISC"

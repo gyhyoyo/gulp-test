@@ -11,9 +11,9 @@ var clean          = require('gulp-dest-clean'); //同步清理
 var newer          = require('gulp-newer');
 
 /*-------按顺序执行任务-------*/
-// gulp.task('default', function(cb) {
-//   runSequence('jade', ['sass','js-concat', 'images'], 'borwserSync', cb);
-//   // runSequence('clean', ['jade','js-concat','sass', 'images'], 'borwserSync', cb);
+// gulp.task('default', function(ddd) {
+//   runSequence('jade', ['sass','js-concat', 'images'], 'borwserSync', ddd);
+//   // runSequence('clean', ['jade','js-concat','sass', 'images'], 'borwserSync', ddd);
 // });
 
 gulp.task('default', ['sass','js-concat','images','jade'], function() {
@@ -27,7 +27,7 @@ gulp.task('default', ['sass','js-concat','images','jade'], function() {
     gulp.watch(['templates/**'],['jade']);
     gulp.watch(['sass/**'],['sass']);
     gulp.watch(['js/**'],['js-concat']);
-    gulp.watch(['images/**','dist/images/**'],['images']);
+    gulp.watch(['images/**'],['images']);
     gulp.watch("dist/templates/*.html").on('change',reload);
 });
 /*-------------------jade 编译--------------*/
@@ -100,7 +100,7 @@ gulp.task('js-uglify', function() {
     ]) 
     .pipe(uglify())
     .pipe(gulp.dest(jsDest))
-    .pipe(borwserSync.stream());
+    // .pipe(borwserSync.stream());
 });
 /*需要合并的js,不需要合并的走压缩*/
 /*index.js*/
@@ -116,7 +116,7 @@ gulp.task('js-index',function() {
     // .pipe(newer(jsDestLib))
     .pipe(uglify())
     .pipe(gulp.dest(jsDest))
-    .pipe(borwserSync.stream());
+    // .pipe(borwserSync.stream());
 });
 /*detail.js*/
 gulp.task('js-detail',function() {
@@ -154,42 +154,3 @@ gulp.task('images', function () {
 });
 
 
-
-/*----------------文件添加MD5后缀-------------------*/
-// var rev = require('gulp-rev');                                            //- 对文件名加MD5后缀
-// var revCollector = require('gulp-rev-collector');                       //- 路径替换
-// gulp.task('rev-url', function() {
-//     gulp.src(['revs/css/*.json','dist/templates/*.html'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
-//         .pipe(revCollector())                                     //- 执行文件内css名的替换
-//         .pipe(gulp.dest('dist/templates'))                      //- 替换后的文件输出的目录
-
-// });
-// gulp.task('revs', ['css','rev-url']);
-
-
-
-/**************************************************
-*以下完成给文件添加MD5,自动压缩图片 
-* 增加私有变量前缀
-*                                 *
-***************************************************/
-
-/**************************************************
-*后续 区别生产环境还是开发环境 发布上线
-* 
-* es6 编译                                  *
-***************************************************/
-
-
-/*待添加到*/
-/*buffer = require('vinyl-buffer'),
-   autoprefixer = require('gulp-autoprefixer'),//增加私有变量前缀
-fileinclude = require('gulp-file-include'),// include 文件用
-template = require('gulp-template'),//替换变量以及动态html用
- 
-    gulpif  = require('gulp-if'),//if判断，用来区别生产环境还是开发环境的
- 
-    addsrc = require('gulp-add-src'),//pipeline中途添加文件夹，这里没有用到
- 
-    vinylPaths = require('vinyl-paths'),//操作pipe中文件路径的，加md5的时候用到了
-    http://www.gbtags.com/gb/share/5503.htm*/

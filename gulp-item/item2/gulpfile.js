@@ -11,13 +11,13 @@ var clean          = require('gulp-dest-clean'); //同步清理
 var newer          = require('gulp-newer');
 
 /*-------按顺序执行任务-------*/
-// gulp.task('default', function(cb) {
-//   runSequence('jade', ['sass','js-concat', 'images'], 'borwserSync', cb);
-//   // runSequence('clean', ['jade','js-concat','sass', 'images'], 'borwserSync', cb);
+// gulp.task('default', function(ddd) {
+//   runSequence('jade', ['sass','js-concat', 'images'], 'borwserSync', ddd);
+//   // runSequence('clean', ['jade','js-concat','sass', 'images'], 'borwserSync', ddd);
 // });
 
 gulp.task('default', ['sass','js-concat','images','jade'], function() {
-   borwserSync.init({
+    borwserSync.init({
         notify: false,
         port:9000,
         server:{
@@ -61,8 +61,8 @@ gulp.task('sass',function(){
     // }))  //livereload(server)
     .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >= 4.0','Firefox >= 20','last 2 Explorer versions'],
-            cascade: false, //美化属性值
-            remove: true     //去掉不必要的前缀
+            cascade: false,                                   //美化属性值
+            remove: true                                      //去掉不必要的前缀
         }))                       
     .pipe(gulp.dest(cssDest))                                  // 输出文件本地
     .pipe(borwserSync.stream());
@@ -76,7 +76,6 @@ gulp.task('css', function () {
         .pipe(rev.manifest())                                    // 生成一个rev-manifest.json
         .pipe(gulp.dest( 'revs/css' ) );                         // 将 rev-manifest.json 保存到 rev 目录内
 });
-
 
 /*------------------js合并压缩--------------*/
 var concat     = require('gulp-concat');
@@ -98,8 +97,8 @@ gulp.task('js-uglify', function() {
     'js/feedback.js'
     ]) 
     .pipe(uglify())
-    .pipe(gulp.dest(jsDest))
-    .pipe(borwserSync.stream());
+    .pipe(gulp.dest(jsDest));
+    // .pipe(borwserSync.stream());
 });
 /*需要合并的js,不需要合并的走压缩*/
 /*index.js*/
@@ -115,7 +114,7 @@ gulp.task('js-index',function() {
     // .pipe(newer(jsDestLib))
     .pipe(uglify())
     .pipe(gulp.dest(jsDest))
-    .pipe(borwserSync.stream());
+    // .pipe(borwserSync.stream());
 });
 /*detail.js*/
 gulp.task('js-detail',function() {
@@ -185,10 +184,7 @@ gulp.task('images', function () {
    autoprefixer = require('gulp-autoprefixer'),//增加私有变量前缀
 fileinclude = require('gulp-file-include'),// include 文件用
 template = require('gulp-template'),//替换变量以及动态html用
- 
     gulpif  = require('gulp-if'),//if判断，用来区别生产环境还是开发环境的
- 
     addsrc = require('gulp-add-src'),//pipeline中途添加文件夹，这里没有用到
- 
     vinylPaths = require('vinyl-paths'),//操作pipe中文件路径的，加md5的时候用到了
     http://www.gbtags.com/gb/share/5503.htm*/
