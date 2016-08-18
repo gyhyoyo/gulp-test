@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import "includes/g_variables";
+@import "includes/g_functions";
+@include cssRestWX();
+/*main*/
+#logo{
+	float:left;
+	width: 40%;
+	height: rem(50px);
+	background-color: #ccc;
+}
+#login{
+	width:30%;
+	text-align: center;
+	color: $global-color;
+}
+#register{
+	color:$color-gray;
+}

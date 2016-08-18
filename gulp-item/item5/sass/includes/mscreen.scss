@@ -1,0 +1,59 @@
+//FROME TAOBAO
+@mixin taobaoScreen(){
+	@media only screen and (min-width:400px) {
+		html {
+			font-size: 21.33px!important
+		}
+	}
+
+	@media only screen and (min-width:414px) {
+		html {
+			font-size: 22.08px!important
+		}
+	}
+
+	@media only screen and (min-width:480px) {
+		html {
+			font-size: 25.6px!important
+		}
+	}
+
+	body {
+		margin: 0;
+		line-height: 1.5rem;
+		color: #3d4145;
+		overflow: hidden
+	}
+	html{
+		font-size:20px;
+		-webkit-text-size-adjust:100%;
+	}
+}
+
+//ROME ....
+@mixin mscreen(){
+	@media screen and (min-width:275px) {
+		html{
+			font-size:14px;
+			//background-color: #f80;
+		}
+	}
+	@media screen and (min-width:480px) {
+		html{
+			font-size:18px;
+			//background-color: #992;
+		}
+	}
+	@media screen and (min-width:768px){
+		html{
+			font-size:20px;
+			//background-color: #ccc;
+		}
+	}
+	@media screen and (min-width:1000px){
+		html{
+			font-size:24px;
+			//background-color: yellow;
+		}
+	}
+}
